@@ -109,9 +109,9 @@ const ExecutiveList = () => {
   
 
    return (
-    <div className="px-4 md:px-10 py-10 bg-gray-50 min-h-screen">
+    <div className="px-4 md:px-10 py-10 min-h-screen">
       <div className="mb-6">
-        <h1 className="text-4xl font-bold">IEEE Executives</h1>
+        <h1 className="text-4xl font-bold text-gray-600">IEEE Executives</h1>
         <p className="text-gray-600">
           Meet the dedicated executives who have led the IEEE STUDENT BRANCH GUB
         </p>
@@ -135,55 +135,51 @@ const ExecutiveList = () => {
       </div>
 
       {/* Faculty Advisors */}
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold flex items-center gap-2 mb-4">
-          <span>🎓</span> Faculty Advisors
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {data.faculty.map((member, i) => (
-            <div
-              key={i}
-              className="bg-white rounded-xl shadow p-4 flex items-center gap-4"
-            >
-             <img
-  src={member.img}
-  alt={member.name}
-  className="h-20 w-auto  rounded-xl"
-/>
-
-              <div>
-                <p className="font-semibold text-lg text-gray-500">{member.name}</p>
-                <p className="text-sm text-gray-500">{member.role}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+<div className="mb-8">
+  <h2 className="text-2xl font-bold flex items-center gap-2 mb-4">
+    <span>🎓</span> Faculty Advisors
+  </h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {data.faculty.map((member, i) => (
+      <div
+        key={i}
+        className="bg-white rounded-2xl shadow-lg p-6 text-center transition hover:shadow-xl"
+      >
+        <img
+          src={member.img}
+          alt={member.name}
+          className="mx-auto h-24 w-24 object-cover rounded-full ring-4 ring-blue-100 mb-4"
+        />
+        <h3 className="text-lg font-semibold text-gray-800">{member.name}</h3>
+        <p className="text-sm text-blue-600 font-medium mt-1">{member.role}</p>
       </div>
+    ))}
+  </div>
+</div>
 
-      {/* Student Executives */}
-       <div>
-        <h2 className="text-2xl font-bold flex items-center gap-2 mb-4">
-          <span>🧑‍💻</span> Student Executives
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {data.students.map((member, i) => (
-            <div
-              key={i}
-              className="bg-white rounded-xl shadow p-4 flex items-center gap-4"
-            >
-              <img
-                src={member.img}
-                alt={member.name}
-                className="w-16 h-16 rounded-xl "
-              />
-              <div>
-                <p className="font-semibold text-lg text-gray-500">{member.name}</p>
-                <p className="text-sm text-gray-500">{member.role}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+{/* Student Executives */}
+<div>
+  <h2 className="text-2xl font-bold flex items-center gap-2 mb-4">
+    <span>🧑‍💻</span> Student Executives
+  </h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {data.students.map((member, i) => (
+      <div
+        key={i}
+        className="bg-white rounded-2xl shadow-lg p-6 text-center transition hover:shadow-xl"
+      >
+        <img
+          src={member.img}
+          alt={member.name}
+          className="mx-auto h-20 w-20 object-cover rounded-full ring-4 ring-blue-100 mb-3"
+        />
+        <h3 className="text-lg font-semibold text-gray-800">{member.name}</h3>
+        <p className="text-sm text-gray-500">{member.role}</p>
       </div>
+    ))}
+  </div>
+</div>
+
     </div>
   );
 };
