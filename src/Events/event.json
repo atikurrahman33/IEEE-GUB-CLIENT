@@ -37,9 +37,9 @@
   },
   {
     "id": 4,
-    "image": "https://picsum.photos/seed/4/300/200",
+    "image": "../../src/Images/c1.png",
     "eventName": "Women in Tech Panel",
-    "date": "2025-03-05",
+    "date": "2025-06-28",
     "time": "2:00 PM",
     "guest": "Nusrat Chowdhury",
     "specialGuest": "Dr. Fahmida Sultana",

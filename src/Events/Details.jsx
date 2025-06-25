@@ -43,15 +43,15 @@ const Details = () => {
             <div className="space-y-4">
               <div>
                 <p className="font-semibold text-blue-600">👤 Chief Guest</p>
-                <p className="bg-gray-100 p-3 rounded-lg dark:bg-base-200">
+                <p className="bg-gray-100 p-3 rounded-lg text-gray-600">
                   {guest}
                 </p>
               </div>
 
-              <div>
-                <p className="font-semibold text-gray-700 dark:text-gray-300">Other Guests</p>
+              <div className="text-gray-600">
+                <p className="font-semibold text-gray-500">Other Guests</p>
                 <p className="bg-gray-100 p-3 rounded-lg dark:bg-base-200">
-                  <span className="font-medium">Special Guest:</span> {specialGuest} <br />
+                  <span className="font-medium text-gray-600">Special Guest:</span> {specialGuest} <br />
                   
                 </p>
               </div>

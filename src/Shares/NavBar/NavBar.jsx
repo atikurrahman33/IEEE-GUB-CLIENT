@@ -19,7 +19,7 @@ const NavBar = () => {
   const baseClass = "font-bold hover:text-blue-500";
 
   return (
-    <div className="px-8">
+    <div>
       <div className="navbar bg-base-100 shadow-sm">
         <div className="navbar-start">
           <div className="dropdown">
