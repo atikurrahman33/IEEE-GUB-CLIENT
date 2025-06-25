@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "image": "../../src/Images/c1.png",
+    "name": "𝐔𝐧𝐥𝐨𝐜𝐤𝐢𝐧𝐠 𝐭𝐡𝐞 𝐏𝐨𝐰𝐞𝐫 𝐨𝐟 𝐃𝐚𝐭𝐚",
+    "organization": "IEEE Computer Society Bangladesh Chapter, Green University Computer Club : GUCC, and PeopleNTech Institute of IT  "
+  },
+  {
+    "id": 2,
+    "image": "https://picsum.photos/seed/a5/400/200",
+    "name": "Sara Hossain",
+    "organization": "IEEE GUB Student Branch"
+  },
+  {
+    "id": 3,
+    "image": "https://picsum.photos/seed/6/400/200",
+    "name": "Mahmudul Karim",
+    "organization": "GUB Career Development Center"
+  },
+  {
+    "id": 4,
+    "image": "https://picsum.photos/seed/a4/400/200",
+    "name": "Jannatul Ferdous",
+    "organization": "GUB Innovation Lab"
+  },
+  {
+    "id": 5,
+    "image": "https://picsum.photos/seed/a5/400/200",
+    "name": "Tanvir Hasan",
+    "organization": "Green University CSE Department"
+  }
+]

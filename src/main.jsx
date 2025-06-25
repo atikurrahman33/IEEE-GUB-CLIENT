@@ -1,18 +1,18 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-
-import {
-  
-  RouterProvider,
-} from "react-router-dom";
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import { RouterProvider } from "react-router-dom";
 import { router } from './Routes/Routers';
-;
+
+import AnimatedBackground from '../src/Animation/AnimatedBackground'; // ✅ Add this
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <div className='max-w-screen-xl mx-auto'>
-     <RouterProvider router={router} />
-     </div>
-  </StrictMode>,
-)
+    <>
+      <AnimatedBackground /> {/* ✅ Inject BG */}
+      <div className='max-w-screen-xl mx-auto relative z-10'>
+        <RouterProvider router={router} />
+      </div>
+    </>
+  </StrictMode>
+);
