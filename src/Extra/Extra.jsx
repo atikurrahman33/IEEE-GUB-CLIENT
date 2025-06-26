@@ -5,7 +5,7 @@ import { IoMail } from "react-icons/io5";
 
 const Extra = () => {
     return (
-        <div className="my-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="my-8 grid grid-cols-1 md:grid-cols-3 gap-6 shadow-sm p-3 max-w-7xl mx-auto">
             {/* Section 1: Logo and About */}
             <div>
                 <div className="flex gap-2 items-center mb-4">
@@ -56,7 +56,7 @@ const Extra = () => {
                     Green University of Bangladesh, Purbachal American City, Kanchan, Rupganj, Narayanganj-1461, Dhaka, Bangladesh
                     <br />
                     <br />
-                    Email: <a href="mailto:gucc@green.edu.bd" className="text-blue-700">ieee@green.edu.bd</a>
+                    Email: <a href="mailto:gucc@green.edu.bd" className="text-blue-700">ieee_sb@green.edu.bd</a>
                 </p>
                 <div className="flex gap-5 pt-2 text-xl">
   <a
@@ -69,7 +69,7 @@ const Extra = () => {
   </a>
 
   <a
-    href="https://www.linkedin.com/"
+    href="https://www.linkedin.com/company/ieee-gub-student-branch/?originalSubdomain=bd"
     target="_blank"
     rel="noopener noreferrer"
     className="hover:text-sky-500 transition-colors duration-200"
@@ -78,7 +78,7 @@ const Extra = () => {
   </a>
 
   <a
-    href="https://mail.google.com/mail/u/0/#inbox"
+    href="ieee_sb@green.edu.bd"
     className="hover:text-sky-500 transition-colors duration-200"
   >
     <IoMail />

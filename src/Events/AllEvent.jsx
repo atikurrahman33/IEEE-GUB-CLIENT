@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import EVECA from "./EVECA";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const AllEvent = () => {
+  const location = useLocation();
+  const isFullPage = location.pathname === "/events"; // check if in full event page
+
   const [events, setEvents] = useState([]);
-  const [showAll, setShowAll] = useState(false);
   const [now, setNow] = useState(new Date());
   const [searchText, setSearchText] = useState("");
-  const [filterType, setFilterType] = useState("all"); // 'all', 'upcoming', 'past'
+  const [filterType, setFilterType] = useState("all");
 
   useEffect(() => {
     fetch("../../src/Events/event.json")
@@ -24,53 +26,57 @@ const AllEvent = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const filteredEvents = events
-    .filter((event) => {
-      const matchesSearch = event.eventName.toLowerCase().includes(searchText.toLowerCase());
+  const filteredEvents = events.filter((event) => {
+    const matchesSearch = event.eventName
+      .toLowerCase()
+      .includes(searchText.toLowerCase());
 
-      if (filterType === "upcoming") {
-        return new Date(event.date) > now && matchesSearch;
-      } else if (filterType === "past") {
-        return new Date(event.date) < now && matchesSearch;
-      }
+    if (filterType === "upcoming") {
+      return new Date(event.date) > now && matchesSearch;
+    } else if (filterType === "past") {
+      return new Date(event.date) < now && matchesSearch;
+    }
 
-      return matchesSearch; // for 'all'
-    });
+    return matchesSearch; // for 'all'
+  });
 
-  const displayedEvents = showAll ? filteredEvents : filteredEvents.slice(0, 6);
+  const displayedEvents = isFullPage ? filteredEvents : filteredEvents.slice(0, 6);
 
   return (
-    <div className="py-8 px-4 md:px-16">
+    <div className="py-8 px-4 max-w-7xl mx-auto">
       <div className="text-center mb-10">
         <p className="text-4xl md:text-6xl font-bold text-golden py-6">
           Recent and Upcoming Events
         </p>
 
-        {/* Search Bar */}
-        <input
-          type="text"
-          placeholder="Search by event name..."
-          value={searchText}
-          onChange={(e) => setSearchText(e.target.value)}
-          className="w-full md:w-1/2 px-4 py-2 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-        />
+        {/* Search and Filters only on /events */}
+        {isFullPage && (
+          <>
+            <input
+              type="text"
+              placeholder="Search by event name..."
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+              className="w-full md:w-1/2 px-4 py-2 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
 
-        {/* Filter Buttons */}
-        <div className="mt-6 flex justify-center flex-wrap gap-4">
-          {["all", "upcoming", "past"].map((type) => (
-            <button
-              key={type}
-              onClick={() => setFilterType(type)}
-              className={`px-5 py-2 rounded-full border text-sm font-medium transition ${
-                filterType === type
-                  ? "bg-blue-600 text-white shadow"
-                  : "bg-white text-gray-700 hover:bg-gray-100"
-              }`}
-            >
-              {type.charAt(0).toUpperCase() + type.slice(1)}
-            </button>
-          ))}
-        </div>
+            <div className="mt-6 flex justify-center flex-wrap gap-4">
+              {["all", "upcoming", "past"].map((type) => (
+                <button
+                  key={type}
+                  onClick={() => setFilterType(type)}
+                  className={`px-5 py-2 rounded-full border text-sm font-medium transition ${
+                    filterType === type
+                      ? "bg-blue-600 text-white shadow"
+                      : "bg-white text-gray-700 hover:bg-gray-100"
+                  }`}
+                >
+                  {type.charAt(0).toUpperCase() + type.slice(1)}
+                </button>
+              ))}
+            </div>
+          </>
+        )}
       </div>
 
       {/* Event Cards */}
@@ -80,15 +86,14 @@ const AllEvent = () => {
         ))}
       </div>
 
-      {/* Show More Button */}
-      {filteredEvents.length > 6 && !showAll && (
+      {/* See More Button only on non-/events pages */}
+      {!isFullPage && filteredEvents.length > 6 && (
         <div className="flex justify-center mt-10">
-          <button
-            onClick={() => setShowAll(true)}
-            className="px-6 py-2 font-semibold text-white bg-gradient-to-r from-blue-500 to-purple-500 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-          >
-            See More
-          </button>
+          <Link to="/events">
+            <button className="px-6 py-2 font-semibold text-white bg-gradient-to-r from-blue-500 to-purple-500 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+              See More
+            </button>
+          </Link>
         </div>
       )}
     </div>

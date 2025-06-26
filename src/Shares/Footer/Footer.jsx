@@ -10,10 +10,33 @@ const Footer = () => {
     <p>  Built with ❤️ by the following IEEE Members</p>
 
 
-    <div className="avatar-group -space-x-6">
+    <div className="avatar-group -space-x-2">
   <div className="avatar">
     <div className="w-12">
       <img src="/src/Images/Atikur_Rahman.jpg" />
+    
+    </div>
+  
+</div>
+ <div className="avatar">
+    <div className="w-12">
+      <img src="/src/Images/ATIKHASAN.png" />
+    
+    </div>
+    
+  
+</div>
+ <div className="avatar">
+    <div className="w-12">
+      <img src="/src/Images/Ashraful.png" />
+    
+    </div>
+  
+</div>
+ <div className="avatar">
+    <div className="w-12">
+      <img src="/src/Images/Promod Chandra Das .jpg" />
+    
     </div>
   
 </div>

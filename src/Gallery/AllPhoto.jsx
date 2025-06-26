@@ -19,7 +19,7 @@ const AllPhoto = () => {
   const previewPhotos = showAll ? photos : photos.slice(0, 8);
 
   return (
-    <div className="relative py-8">
+    <div className="relative max-w-7xl mx-auto py-8">
      
   {/* Button positioned top right */}
   {!showAll && (

@@ -9,8 +9,8 @@ import AnimatedBackground from '../src/Animation/AnimatedBackground'; // ✅ Add
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <>
-      <AnimatedBackground /> {/* ✅ Inject BG */}
-      <div className='max-w-screen-xl mx-auto relative z-10'>
+      {/* <AnimatedBackground /> ✅ Inject BG */}
+      <div className=''>
         <RouterProvider router={router} />
       </div>
     </>

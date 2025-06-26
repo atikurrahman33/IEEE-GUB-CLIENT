@@ -18,7 +18,7 @@ const Feature = () => {
   const displayedEvents = showAll ? events : events.slice(0, 4);
 
   return (
-    <div className="py-8 px-4">
+    <div className="py-8 px-4 max-w-7xl mx-auto">
       {/* Header and button in one row */}
       <div className="flex items-center justify-between pb-6">
         <div>
