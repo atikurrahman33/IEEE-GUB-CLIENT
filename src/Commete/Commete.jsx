@@ -1,119 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { IoMailOutline } from "react-icons/io5";
 
-// Sample data for 2025 and 2024 (extend as needed)
-const executiveData = {
-  2025: {
-    SB: {
-    faculty: [
-      { name: "Dr.Aminur Rahman ", role: "BRANCH COUNSRLOR", img: "../../src/Images/AMN.jpg" },
-      { name: "Dr.Ahmed Al Mansur", role: "MENTOR", img: "../../src/Images/AHMED.jpg" },
-      { name: "MD.Rajibul Palas", role: "MENTOR", img: "../../src/Images/RJBUL.jpg" },
-    ],
-    students : [
-  { name: "Faysal Hossain Tomal", role: "Chair", img: "../../src/Images/Faysal Hossain Tomal No BG.png" },
-  { name: "S. M Shakib Mahmud Shefat", role: "Vice-chair (Activity)", img: "../../src/Images/Sakib Mahmud.jpeg" },
-  { name: "Fahim Mahmud", role: "Vice-chair (Technical)", img: "../../src/Images/Fahim Mahmud.jpg" },
-  { name: "Shahadat Hosen Nishan", role: "General Secretary", img: "../../src/Images/Shahadat Hosen Nishan.jpg" },
-  { name: "Esrat Ahmed Eva", role: "Joint Secretary", img: "../../src/Images/Eva.JPG" },
-  { name: "Md. Abu Rayhan Imran", role: "Treasurer", img: "../../src/Images/Md. Abu Rayhan Imran No BG.png" },
-  { name: "Pritam Saha Turja", role: "Organizing Secretary", img: "../../src/Images/Pritam Saha Turja.jpg" },
-  { name: "Antu Marma", role: "Joint Organizing Secretary", img: "../../src/Images/antumarma.jpg" },
-  { name: "Nasibul Hasan Naem", role: "Publication Secretary", img: "../../src/Images/Nasibul Hasan Naem.jpeg" },
-  { name: "Dip Barman", role: "Programme Co-Ordinator", img: "../../src/Images/Dip Barman.png" },
-  { name: "Md. Rifat Bin Hasan", role: "Programme Co-Ordinator", img: "../../src/Images/Screenshot 2025-06-22 235847.png" },
-  { name: "Promod Chandra Das", role: "Membership Development Co-Ordinator", img: "../../src/Images/Promod Chandra Das .jpg" },
-  { name: "Afsa Akter Shawla", role: "Student Activity Co-Ordinator", img: "../../src/Images/Afsa Akter Shawla.jpeg" },
-  { name: "Md.Mainul Islam Nerob", role: "Publicity Co-Ordinator", img: "../../src/Images/Md.Mainul Islam Nerob.jpg" },
-  { name: "Atikur Rahman", role: "Information Secretary", img: "../../src/Images/Atikur_Rahman (1).jpg" },
-  { name: "S M Naymuzzaman Nahid", role: "Graphics Designer", img: "../../src/Images/S M Naymuzzaman Nahid .jpg" },
-  { name: "Md Miadul Islam Nizzan", role: "Asst Graphics Designer", img: "../../src/Images/Miadul Islam Nizzan.jpg" },
-  { name: "Maheer Jabin Priya", role: "Web master & Newsletter editor", img: "../../src/Images/Maheer Jabin Priya.jpg" },
-  { name: "Tonmoy Kanti Das", role: "Executive Member", img: "../../src/Images/Tonmoy Das.jpeg" },
-  { name: "Shakib Hasan", role: "Executive Member", img: "../../src/Images/IMG_20250519_223416.jpg" },
-],
-
-  },
-    CS: {
-      faculty: [{ name: "Dr. Ahmed Al Mansur", role: "Mentor", img: "../../src/Images/AHMED.jpg" }],
-      students: [{ name: "Md. Abu Rayhan Imran", role: "Treasurer", img: "../../src/Images/Md. Abu Rayhan Imran No BG.png" }],
-    },
-    MAIN: {
-      faculty: [{ name: "MD.Rajibul Palas", role: "Mentor", img: "../../src/Images/RJBUL.jpg" }],
-      students: [{ name: "Esrat Ahmed Eva", role: "Joint Secretary", img: "../../src/Images/Eva.JPG" }],
-    },
-  },
-  2024: {
-    SB: {
-      faculty: [{ name: "Dr. Rifat Jahan", role: "Moderator", img: "https://i.imgur.com/Wm4FSlO.png" }],
-      students: [{ name: "Zahid Khan", role: "President", img: "https://i.imgur.com/qCN5WwL.png" }],
-    },
-    CS: {
-      faculty: [],
-      students: [{ name: "Fatema Ruma", role: "Vice President", img: "https://i.imgur.com/2GwCzFy.png" }],
-    },
-    MAIN: {
-      faculty: [],
-      students: [],
-    },
-  },
-  2023: {
-    SB: {
-      faculty: [{ name: "Dr. Rifat Jahan", role: "Moderator", img: "https://i.imgur.com/Wm4FSlO.png" }],
-      students: [{ name: "Zahid Khan", role: "President", img: "https://i.imgur.com/qCN5WwL.png" }],
-    },
-    CS: {
-      faculty: [],
-      students: [{ name: "Fatema Ruma", role: "Vice President", img: "https://i.imgur.com/2GwCzFy.png" }],
-    },
-    MAIN: {
-      faculty: [],
-      students: [],
-    },
-  },
-  2022: {
-    SB: {
-      faculty: [{ name: "Dr. Rifat Jahan", role: "Moderator", img: "https://i.imgur.com/Wm4FSlO.png" }],
-      students: [{ name: "Zahid Khan", role: "President", img: "https://i.imgur.com/qCN5WwL.png" }],
-    },
-    CS: {
-      faculty: [],
-      students: [{ name: "Fatema Ruma", role: "Vice President", img: "https://i.imgur.com/2GwCzFy.png" }],
-    },
-    MAIN: {
-      faculty: [],
-      students: [],
-    },
-  },
-  2021: {
-    SB: {
-      faculty: [{ name: "Dr. Rifat Jahan", role: "Moderator", img: "https://i.imgur.com/Wm4FSlO.png" }],
-      students: [{ name: "Zahid Khan", role: "President", img: "https://i.imgur.com/qCN5WwL.png" }],
-    },
-    CS: {
-      faculty: [],
-      students: [{ name: "Fatema Ruma", role: "Vice President", img: "https://i.imgur.com/2GwCzFy.png" }],
-    },
-    MAIN: {
-      faculty: [],
-      students: [],
-    },
-  },
-};
-
-const ExecutiveList = () => {
-  const years = Object.keys(executiveData).sort((a, b) => b - a);
-
+const Commete = () => {
+  const [executiveData, setExecutiveData] = useState({});
   const [selectedYear, setSelectedYear] = useState("2025");
   const [selectedGroup, setSelectedGroup] = useState("SB");
 
+  // Fetch data from JSON file
+  useEffect(() => {
+    fetch("../../src/Commete/Member.json") // assuming the JSON is in the public folder
+      .then((response) => response.json())
+      .then((data) => setExecutiveData(data));
+  }, []);
+
   const data = executiveData[selectedYear]?.[selectedGroup] || { faculty: [], students: [] };
+  const years = Object.keys(executiveData).sort((a, b) => b - a); // Sort descending
 
   return (
     <div className="px-4 max-w-7xl mx-auto py-10 min-h-screen">
       {/* Title */}
       <div className="mb-6">
         <h1 className="text-4xl font-bold text-gray-600">IEEE Executives</h1>
-        <p className="text-gray-600">Meet the dedicated executives who have led the IEEE STUDENT BRANCH GUB</p>
+        <p className="text-gray-600">
+          Meet the dedicated executives who have led the IEEE STUDENT BRANCH GUB
+        </p>
       </div>
 
       {/* Year Buttons */}
@@ -123,7 +34,7 @@ const ExecutiveList = () => {
             key={year}
             onClick={() => {
               setSelectedYear(year);
-              setSelectedGroup("SB"); // reset to SB when year changes
+              setSelectedGroup("SB"); // reset to SB on year change
             }}
             className={`px-4 py-1 rounded border ${
               selectedYear === year
@@ -136,7 +47,7 @@ const ExecutiveList = () => {
         ))}
       </div>
 
-      {/* SB / CSB / MAIN Buttons */}
+      {/* Group Buttons */}
       <div className="flex gap-3 mb-10">
         {["SB", "CS", "MAIN"].map((group) => (
           <button
@@ -158,7 +69,10 @@ const ExecutiveList = () => {
         <h2 className="text-2xl font-bold flex items-center gap-2 mb-4">🎓 Faculty Advisors</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {data.faculty.map((member, index) => (
-            <div key={index} className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition">
+            <div
+              key={index}
+              className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition"
+            >
               <img
                 src={member.img}
                 alt={member.name}
@@ -173,17 +87,57 @@ const ExecutiveList = () => {
 
       {/* Student Section */}
       <div>
-        <h2 className="text-2xl font-bold flex items-center gap-2 mb-4">🧑‍💻 Student Executives</h2>
+        <h2 className="text-2xl font-bold flex items-center gap-2 mb-6">🧑‍💻 Student Executives</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {data.students.map((member, index) => (
-            <div key={index} className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition">
-              <img
-                src={member.img}
-                alt={member.name}
-                className="mx-auto h-20 w-20 object-cover rounded-full ring-4 ring-blue-100 mb-3"
-              />
+            <div
+              key={index}
+              className="relative bg-white rounded-2xl shadow-md hover:shadow-xl transition-all p-6 text-center border border-gray-100"
+            >
+              {/* Profile Image */}
+              <div className="relative w-24 h-24 mx-auto mb-4">
+                <img
+                  src={member.img}
+                  alt={member.name}
+                  className="w-full h-full object-cover rounded-full shadow-md border-4 border-blue-200"
+                />
+              </div>
+
+              {/* Name & Role */}
               <h3 className="text-lg font-semibold text-gray-800">{member.name}</h3>
               <p className="text-sm text-gray-500">{member.role}</p>
+
+              {/* Social Icons in Bottom-Right */}
+              <div className="absolute bottom-4 right-4 flex gap-3 text-blue-600 text-lg">
+                {member.facebook && (
+                  <a
+                    href={member.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-blue-800"
+                  >
+                    <FaFacebookF />
+                  </a>
+                )}
+                {member.linkedin && (
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-blue-800"
+                  >
+                    <FaLinkedinIn />
+                  </a>
+                )}
+                {member.email && (
+                  <a
+                    href={`mailto:${member.email}`}
+                    className="hover:text-blue-800"
+                  >
+                    <IoMailOutline />
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>
@@ -192,4 +146,4 @@ const ExecutiveList = () => {
   );
 };
 
-export default ExecutiveList;
+export default Commete;
