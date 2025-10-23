@@ -60,7 +60,7 @@ const NavBar = () => {
             </ul>
           </div>
           <NavLink to="/">
-            <img className="w-40 h-15" src="/src/Images/IEEE SB.png" alt="" />
+            <img className="w-40 h-15" src="/Images/IEEE SB.png" alt="" />
           </NavLink>
         </div>
 

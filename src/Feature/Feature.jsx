@@ -7,7 +7,7 @@ const Feature = () => {
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
-    fetch('../../src/Feature/Colab.json') // Make sure this is in public/Feature/
+    fetch('/Data/Colab.json') // Make sure this is in public/Feature/
       .then(response => response.json())
       .then(data => {
         const sorted = data.sort((a, b) => new Date(a.id) - new Date(b.id));

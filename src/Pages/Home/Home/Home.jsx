@@ -19,7 +19,7 @@ const Home = () => {
             <Feature></Feature>           
             <AllEvent></AllEvent>          
             <Extra></Extra>
-            <Design></Design>
+           
             
             
         </div>

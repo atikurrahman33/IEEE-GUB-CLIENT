@@ -11,7 +11,7 @@ const Extra = () => {
                 <div className="flex gap-2 items-center mb-4">
                     <img
                         className="w-16 h-16 object-contain"
-                        src="/src/Images/455678157_529474076094574_740944826832800865_n__1_-removebg-preview.png"
+                        src="/Images/455678157_529474076094574_740944826832800865_n__1_-removebg-preview.png"
                         alt="IEEE Logo"
                     />
                     <p className="text-xl font-bold">IEEE Student Branch GUB</p>

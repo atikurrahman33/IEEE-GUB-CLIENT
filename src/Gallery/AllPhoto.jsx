@@ -8,7 +8,7 @@ const AllPhoto = () => {
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
-    fetch('../../src/Gallery/photos.json')
+    fetch('/Data/photos.json')
       .then(response => response.json())
       .then(data => {
         const sorted = data.sort((a, b) => new Date(a.id) - new Date(b.id));

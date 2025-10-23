@@ -12,7 +12,7 @@ const AllEvent = () => {
   const [filterType, setFilterType] = useState("all");
 
   useEffect(() => {
-    fetch("../../src/Events/event.json")
+    fetch("/Data/Event.json")
       .then((response) => response.json())
       .then((data) => {
         const sorted = data.sort((a, b) => new Date(b.date) - new Date(a.date));

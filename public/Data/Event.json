@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "../../src/Images/e1.jpg",
+    "image": "/Images/e1.jpg",
     "eventName": "Webinar on Cyber Existence of Professional Skills for a Graduate",
     "description": "Join us for an in-depth exploration of how cyber skills can enhance professional development...",
     "date": "2025-08-03",
@@ -42,7 +42,7 @@
   },
   {
     "id": 2,
-    "image": "images/Event/IEEE_YPtalkseries_2025_Banner.png",
+    "image": "/Images/e1.jpg",
     "eventName": "IEEE Young Professionals Bangladesh Talk Series 2025",
     "description": "IEEE Young Professionals Bangladesh Talk Series is a flagship online talk series aimed at early-career engineers, students, and researchers. The series focuses on professional growth, career planning, leadership, and networking within the IEEE community. This time the talk was held on Emerging Trends on Blockchain Technology to foster learning and make students more aware of recent industry and academia trends.",
     "date": "2025-07-19",
@@ -83,7 +83,7 @@
   },
   {
     "id": 3,
-    "image": "/images/Event/7.jpg",
+    "image": "/Images/e1.jpg",
     "eventName": "CSE Carnival - Tech Based Debate Contest",
     "description": "Join us for an exciting technology-focused debate competition where students showcase their analytical skills and technical knowledge through structured debates on contemporary tech topics.",
     "date": "2024-10-03",
@@ -124,7 +124,7 @@
   },
   {
     "id": 4,
-    "image": "/images/s2.png",
+    "image": "/Images/e1.jpg",
     "eventName": "How Industry-Academia Collaboration Could Benefit CSE Graduates in 2024",
     "description": "An insightful seminar exploring the vital connections between industry requirements and academic preparation, focusing on how collaboration can enhance career prospects for Computer Science graduates.",
     "date": "2024-10-04",
@@ -165,7 +165,7 @@
   },
   {
     "id": 5,
-    "image": "/images/Event/5.jpg",
+    "image": "/Images/e1.jpg",
     "eventName": "CSE Carnival - IT Olympiad",
     "description": "A competitive IT Olympiad designed to test students' knowledge in various computer science domains including programming, algorithms, data structures, and problem-solving skills.",
     "date": "2024-10-04",
@@ -206,7 +206,7 @@
   },
   {
     "id": 6,
-    "image": "/images/Event/19.jpg",
+    "image": "/Images/e1.jpg",
     "eventName": "Panel Discussion on How Industry-Academia Collaboration Could Benefit CSE Graduates in 2024",
     "description": "An interactive panel discussion featuring industry experts and academic leaders discussing strategies for effective collaboration between universities and technology companies to enhance graduate employability.",
     "date": "2024-10-04",
@@ -257,7 +257,7 @@
   },
   {
     "id": 7,
-    "image": "/images/Event/21.jpg",
+    "image": "/Images/e1.jpg",
     "eventName": "Revolution of Robotics Technology and Artificial Intelligence",
     "description": "Explore the cutting-edge developments in robotics and AI technology, understanding their impact on various industries and future career opportunities in these rapidly evolving fields.",
     "date": "2024-10-04",
@@ -298,7 +298,7 @@
   },
   {
     "id": 8,
-    "image": "/images/Event/8.jpg",
+    "image": "/Images/e1.jpg",
     "eventName": "Career Guideline Workshop on Full-Stack Development with MERN",
     "description": "A comprehensive workshop covering MongoDB, Express.js, React, and Node.js (MERN) stack development, providing hands-on experience and career guidance for aspiring full-stack developers.",
     "date": "2024-10-17",
@@ -339,7 +339,7 @@
   },
   {
     "id": 9,
-    "image": "/images/Event/3.jpg",
+    "image": "/Images/e1.jpg",
     "eventName": "Innovation Summit 2025",
     "description": "A comprehensive summit focusing on emerging technologies, innovation strategies, and entrepreneurship opportunities for students and professionals in the tech industry.",
     "date": "2025-03-15",

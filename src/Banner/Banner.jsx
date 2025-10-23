@@ -3,9 +3,9 @@ import Particles from "../Shares/Particles";
 
 const Banner = () => {
   const images = [
-    "/src/Images/s3.jpg",
-    "/src/Images/s1.jpg",
-    "/src/Images/s4.jpg",
+    "/Images/s3.jpg",
+    "/Images/s1.jpg",
+    "/Images/s4.jpg",
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

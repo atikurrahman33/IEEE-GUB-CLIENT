@@ -9,7 +9,7 @@ const Commete = () => {
 
   // Fetch data from JSON file
   useEffect(() => {
-    fetch("../../src/Commete/Member.json") // assuming the JSON is in the public folder
+    fetch("/Data/Members.json") // assuming the JSON is in the public folder
       .then((response) => response.json())
       .then((data) => setExecutiveData(data));
   }, []);

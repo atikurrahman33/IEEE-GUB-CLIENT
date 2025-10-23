@@ -14,7 +14,7 @@ const About = () => {
             {/* Who We Are Section */}
             <div className="flex flex-col md:flex-row items-center  py-12 gap-12">
                 <motion.img
-                    src="https://i.ibb.co/MFbH663/Screenshot-2025-06-22-122249.png"
+                    src="/Images/ssssssssa.png"
                     alt="IEEE Team"
                     className="w-full md:w-1/2 rounded-xl shadow-md"
                     initial={{ opacity: 0, x: -50 }}
